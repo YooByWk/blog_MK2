@@ -13,9 +13,10 @@ export const handler = {
         "INSERT INTO posts (title, content_raw, content_html) VALUES (?, ?, ?)"
       );
       query.run(title, raw_content, processedHtml);
+      return new Response("Post Created", { status: 201 });
     } catch (error) {
       console.error(error);
-      return new Response("Server Error", { status : 500})
+      return new Response("Server Error", { status: 500 });
     }
   }
 };

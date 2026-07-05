@@ -4,9 +4,14 @@
 
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
+import * as $_layout from "./routes/_layout.tsx";
+import * as $admin from "./routes/admin.tsx";
+import * as $api_admin_logs from "./routes/api/admin/logs.ts";
 import * as $api_joke from "./routes/api/joke.ts";
-import * as $greet_name_ from "./routes/greet/[name].tsx";
+import * as $api_post from "./routes/api/post.ts";
+import * as $api_push_subscribe from "./routes/api/push/subscribe.ts";
 import * as $index from "./routes/index.tsx";
+import * as $AdminNoti from "./islands/AdminNoti.tsx";
 import * as $Counter from "./islands/Counter.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
@@ -14,11 +19,16 @@ const manifest = {
   routes: {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
+    "./routes/_layout.tsx": $_layout,
+    "./routes/admin.tsx": $admin,
+    "./routes/api/admin/logs.ts": $api_admin_logs,
     "./routes/api/joke.ts": $api_joke,
-    "./routes/greet/[name].tsx": $greet_name_,
+    "./routes/api/post.ts": $api_post,
+    "./routes/api/push/subscribe.ts": $api_push_subscribe,
     "./routes/index.tsx": $index,
   },
   islands: {
+    "./islands/AdminNoti.tsx": $AdminNoti,
     "./islands/Counter.tsx": $Counter,
   },
   baseUrl: import.meta.url,
